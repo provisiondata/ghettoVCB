@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # William Lam
 # www.virtuallyghetto.com
 # Script to build ghettoVCB VIB using VIB Author (can use with lamw/vibauthor Docker Container)
@@ -42,6 +42,8 @@ VIB_PAYLOAD_DIR=${GVCB_TEMP_DIR}/payloads/payload1
 mkdir -p ${GVCB_TEMP_DIR}
 # Create VIB spec payload directory
 mkdir -p ${VIB_PAYLOAD_DIR}
+# Create the artifacts directory
+mkdir -p ${GVCB_ARTIFACTS}
 
 # Create ghettoVCB VIB descriptor.xml
 cat > ${VIB_DESC_FILE} << __GHETTOVCB__
@@ -90,7 +92,6 @@ GVCB_FW_DIR=${VIB_PAYLOAD_DIR}/etc/vmware/firewall
 mkdir -p ${GVCB_BIN_DIR}
 mkdir -p ${GVCB_CONF_DIR}
 mkdir -p ${GVCB_FW_DIR}
-mkdir -p ${GVCB_ARTIFACTS}
 
 # Copy ghettoVCB files to bin/conf directories
 cp ${GVCB_REPO_DIR}/*.sh ${GVCB_BIN_DIR}

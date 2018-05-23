@@ -10,11 +10,7 @@ RUN rpm -ivh vmware-esx-vib-author-5.0.0-0.0.847598.i386.rpm
 # Download ghettoVCB VIB build script
 ADD create_ghettoVCB_vib.sh .
 RUN chmod +x create_ghettoVCB_vib.sh
-RUN mkdir /artifacts
-
-# Run ghettoVCB VIB build script
-RUN create_ghettoVCB_vib.sh
 
 VOLUME ["/artifacts"]
 
-CMD ["/bin/bash"]
+CMD ["/root/create_ghettoVCB_vib.sh"]
