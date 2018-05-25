@@ -1,2 +1,2 @@
 docker build -t vibbuilder --rm .
-docker run -v ./artifacts:/artifacts vibbuilder
+docker run -v C:\Source\ghettoVCB\VibBuilder\artifacts:/artifacts vibbuilder

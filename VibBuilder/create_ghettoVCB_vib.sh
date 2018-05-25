@@ -24,6 +24,7 @@ fi
 
 # Ensure no existing ghettoVCB repo exists
 if [ -e ${GVCB_REPO_DIR} ]; then
+	echo "removing previous ghettoVCB repo ..."
 	rm -rf ${GVCB_REPO_DIR}
 fi
 
