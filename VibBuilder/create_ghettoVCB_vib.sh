@@ -102,7 +102,7 @@ cp ${GVCB_REPO_DIR}/*.xml ${GVCB_FW_DIR}
 # Create ghettoVCB VIB + offline bundle
 vibauthor -C -t ${GVCB_TEMP_DIR} -v vghetto-ghettoVCB.vib -O vghetto-ghettoVCB-offline-bundle.zip -f
 
-mv vghetto-ghettoVCB* /artifacts
+mv -f vghetto-ghettoVCB* /artifacts
 
 # Remove ghettoVCB temp dir
 rm -rf ${GVCB_TEMP_DIR}
