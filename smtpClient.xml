@@ -1,5 +1,5 @@
 <service id="0032">
-<id>SMTPTCPOut</id>
+<id>smtpClient</id>
 <rule id='0000'>
 <direction>outbound</direction>
 <protocol>tcp</protocol>
