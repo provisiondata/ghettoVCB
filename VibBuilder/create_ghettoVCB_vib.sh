@@ -90,16 +90,18 @@ __GHETTOVCB__
 GVCB_BIN_DIR=${VIB_PAYLOAD_DIR}/opt/ghettovcb/bin
 GVCB_CONF_DIR=${VIB_PAYLOAD_DIR}/etc/ghettovcb
 GVCB_FW_DIR=${VIB_PAYLOAD_DIR}/etc/vmware/firewall
+GVCB_RC_DIR=${VIB_PAYLOAD_DIR}/etc/rc.local.d
 mkdir -p ${GVCB_BIN_DIR}
 mkdir -p ${GVCB_CONF_DIR}
 mkdir -p ${GVCB_FW_DIR}
 
 # Copy ghettoVCB files to bin/conf directories
-cp ${GVCB_REPO_DIR}/*.sh ${GVCB_BIN_DIR}
+cp ${GVCB_REPO_DIR}/ghettoVCB.sh ${GVCB_BIN_DIR}
+cp ${GVCB_REPO_DIR}/ghettoVCB-restore.sh ${GVCB_BIN_DIR}
 cp ${GVCB_REPO_DIR}/*.conf ${GVCB_CONF_DIR}
 cp ${GVCB_REPO_DIR}/*_template ${GVCB_CONF_DIR}
 cp ${GVCB_REPO_DIR}/*.xml ${GVCB_FW_DIR}
-
+cp ${GVCB_REPO_DIR}/999.openSmtp.sh ${GVCB_RC_DIR}
 # Create ghettoVCB VIB + offline bundle
 vibauthor -C -t ${GVCB_TEMP_DIR} -v vghetto-ghettoVCB.vib -O vghetto-ghettoVCB-offline-bundle.zip -f
 
